@@ -1,123 +1,63 @@
-\# 💊 OCD Patient Medication Prediction Project
+# 💊 OCD Patient Medication Prediction Project
 
+![OCD Awareness Banner - Placeholder Image (Optional: Replace with a project-specific image/logo/result snippet)](https://img.shields.io/badge/Project-OCD_Medication_Prediction-blueviolet?style=for-the-badge)
+![Python 3.10+](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-0077B6?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![TensorFlow/Keras](https://img.shields.io/badge/TensorFlow%2FKeras-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 
+## Table of Contents
 
-!\[OCD Awareness Banner - Placeholder Image (Optional: Replace with a project-specific image/logo/result snippet)](https://img.shields.io/badge/Project-OCD\_Medication\_Prediction-blueviolet?style=for-the-badge)
-
-!\[Python 3.10+](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge\&logo=python\&logoColor=white)
-
-!\[Scikit-learn](https://img.shields.io/badge/Scikit--learn-0077B6?style=for-the-badge\&logo=scikit-learn\&logoColor=white)
-
-!\[Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge\&logo=streamlit\&logoColor=white)
-
-
-
-\## Table of Contents
-
-
-
-\- \[1. Executive Summary](#1-executive-summary)
-
-\- \[2. Project Overview](#2-project-overview)
-
-&nbsp; - \[2.1 Problem Statement](#21-problem-statement)
-
-&nbsp; - \[2.2 Dataset Description](#22-dataset-description)
-
-\- \[3. Project Structure](#3-project-structure)
-
-\- \[4. Setup and Installation](#4-setup-and-installation)
-
-\- \[5. Detailed Methodology](#5-detailed-methodology)
-
-&nbsp; - \[5.1 Data Loading \& Initial Exploration](#51-data-loading--initial-exploration)
-
-&nbsp; - \[5.2 Exploratory Data Analysis (EDA)](#52-exploratory-data-analysis-eda)
-
-&nbsp; - \[5.3 Data Preprocessing](#53-data-preprocessing)
-
-&nbsp; - \[5.4 Feature Engineering \& Scaling](#54-feature-engineering--scaling)
-
-&nbsp; - \[5.5 Model Training \& Evaluation](#55-model-training--evaluation)
-
-&nbsp; - \[5.6 Model Interpretation](#56-model-interpretation)
-
-\- \[6. Results and Insights](#6-results-and-insights)
-
-&nbsp; - \[6.1 Key EDA Insights](#61-key-eda-insights)
-
-&nbsp; - \[6.2 Model Performance Summary](#62-model-performance-summary)
-
-&nbsp; - \[6.3 Feature Importance](#63-feature-importance)
-
-\- \[7. Deployment (Streamlit Dashboard)](#7-deployment-streamlit-dashboard)
-
-\- \[8. Conclusions \& Future Work](#8-conclusions--future-work)
-
-\- \[9. Contact / Author](#9-contact--author)
-
-\- \[10. License](#10-license)
-
-
+- [1. Executive Summary](#1-executive-summary)
+- [2. Project Overview](#2-project-overview)
+  - [2.1 Problem Statement](#21-problem-statement)
+  - [2.2 Dataset Description](#22-dataset-description)
+- [3. Project Structure](#3-project-structure)
+- [4. Setup and Installation](#4-setup-and-installation)
+- [5. Detailed Methodology](#5-detailed-methodology)
+  - [5.1 Data Loading & Initial Exploration](#51-data-loading--initial-exploration)
+  - [5.2 Exploratory Data Analysis (EDA)](#52-exploratory-data-analysis-eda)
+  - [5.3 Data Preprocessing](#53-data-preprocessing)
+  - [5.4 Feature Engineering & Scaling](#54-feature-engineering--scaling)
+  - [5.5 Model Training & Evaluation](#55-model-training--evaluation)
+  - [5.6 Model Interpretation](#56-model-interpretation)
+- [6. Results and Insights](#6-results-and-insights)
+  - [6.1 Key EDA Insights](#61-key-eda-insights)
+  - [6.2 Model Performance Summary](#62-model-performance-summary)
+  - [6.3 Feature Importance](#63-feature-importance)
+- [7. Deployment (Streamlit Dashboard)](#7-deployment-streamlit-dashboard)
+- [8. Conclusions & Future Work](#8-conclusions--future-work)
+- [9. Contact / Author](#9-contact--author)
+- [10. License](#10-license)
 
 ---
 
+## 1. Executive Summary
 
+This project presents a comprehensive data science solution for predicting medication prescriptions in Obsessive-Compulsive Disorder (OCD) patients based on their demographic and clinical profiles. Utilizing a dataset of 1500 individuals, I've conducted a thorough Exploratory Data Analysis (EDA), implemented robust data preprocessing techniques, and built a machine learning classification pipeline.
 
-\## 1. Executive Summary
+The core of this solution lies in a **Multiclass Classification Model (Ensemble VotingClassifier and/or a Neural Network)** that achieved an accuracy of **`[Your Ensemble VotingClassifier accuracy]%`** (or specify NN accuracy if higher) on unseen evaluation data. Key insights from feature importance indicated **`[Your most important feature 1, e.g., Anxiety Diagnosis]`** and **`[Your most important feature 2, e.g., Y-BOCS Score (Obsessions)]`** as the most influential factors in predicting medication types.
 
+A functional **Streamlit web application** is also deployed, demonstrating a practical interface for real-time predictions based on patient input. This project offers a data-driven understanding of potential treatment patterns and stands as a foundational step toward developing decision-support tools in mental healthcare.
 
+## 2. Project Overview
 
-This project presents a comprehensive data science solution for predicting medication prescriptions in Obsessive-Compulsive Disorder (OCD) patients based on their demographic and clinical profiles. Leveraging a dataset of 1500 individuals, I've conducted a thorough Exploratory Data Analysis (EDA), implemented robust data preprocessing techniques, and built a machine learning classification pipeline.
+### 2.1 Problem Statement
 
+Obsessive-Compulsive Disorder (OCD) is a complex mental health condition requiring tailored treatment, often including medication. Understanding which patient characteristics correlate with specific medication types is crucial for optimizing treatment strategies. This project aims to address the challenge: **"Can we predict the likely medication prescribed to an OCD patient based on their demographic and clinical data?"**
 
+### 2.2 Dataset Description
 
-The core of this solution lies in a \*\*Multiclass Classification Model (Ensemble VotingClassifier)\*\* that achieved an accuracy of \*\*25.667%\*\* on unseen evaluation data. Key insights from feature importance indicated \*\*`Anxiety Diagnosis`\*\* and \*\*`Y-BOCS Score (Obsessions)`\*\* as the most influential factors in predicting medication types.
+The dataset used in this project is titled "OCD Patient Dataset: Demographics & Clinical Data," a comprehensive collection sourced from `[If publicly available, mention source like Kaggle and include link here. Otherwise, state "privately collected" or "simulated data"].` It encompasses information for 1500 individuals diagnosed with OCD.
 
+**Key Features Include:**
+- **Demographic Information:** `Age`, `Gender`, `Ethnicity`, `Marital Status`, `Education Level`.
+- **Clinical Details:** `OCD Diagnosis Date`, `Duration of Symptoms (months)`, `Previous Diagnoses` (prior to OCD), `Family History of OCD`, `Obsession Type`, `Compulsion Type`, `Y-BOCS Score (Obsessions)`, `Y-BOCS Score (Compulsions)`, `Depression Diagnosis`, `Anxiety Diagnosis`.
+- **Target Variable:** `Medications` (type of medication prescribed).
 
-
-A functional \*\*Streamlit web application\*\* is also available, demonstrating a practical interface for real-time predictions based on patient input. This project offers a data-driven understanding of potential treatment patterns and stands as a foundational step toward developing decision-support tools in mental healthcare.
-
-
-
-\## 2. Project Overview
-
-
-
-\### 2.1 Problem Statement
-
-
-
-Obsessive-Compulsive Disorder (OCD) is a complex mental health condition requiring tailored treatment, often including medication. Understanding which patient characteristics correlate with specific medication types is crucial for optimizing treatment strategies. This project aims to address the challenge: \*\*"Can we predict the likely medication prescribed to an OCD patient based on their demographic and clinical data?"\*\*
-
-
-
-\### 2.2 Dataset Description
-
-
-
-The dataset used in this project is titled "OCD Patient Dataset: Demographics \& Clinical Data," a comprehensive collection.
-
-`\[If publicly available, mention source like Kaggle and include link here. Otherwise, state "privately collected" or "simulated data"].`
-
-
-
-\*\*Key Features Include:\*\*
-
-\- \*\*Demographic Information:\*\* `Patient ID`, `Age`, `Gender`, `Ethnicity`, `Marital Status`, `Education Level`.
-
-\- \*\*Clinical Details:\*\* `OCD Diagnosis Date`, `Duration of Symptoms (months)`, `Previous Diagnoses` (prior to OCD), `Family History of OCD`, `Obsession Type`, `Compulsion Type`, `Y-BOCS Score (Obsessions)`, `Y-BOCS Score (Compulsions)`, `Depression Diagnosis`, `Anxiety Diagnosis`.
-
-\- \*\*Target Variable:\*\* `Medications` (type of medication prescribed).
-
-
-
-\## 3. Project Structure
-
-
+## 3. Project Structure
 
 The repository is structured as follows:
-
 
 
 ```
