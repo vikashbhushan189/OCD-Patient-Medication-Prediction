@@ -262,9 +262,6 @@ The findings underscore the potential of data analytics in mental health researc
 
 Feel free to connect or ask any questions about this project!
 
-## 10. License
-
-This project is licensed under the MIT License - see the `LICENSE` file for details.
 
 ---
 
