@@ -208,7 +208,7 @@ My analytical process involved the following key stages:
 
 ### 6.3 Feature Importance
 
-![Feature Importance Plot Placeholder](screenshots/feat_importance.png)
+![Feature Importance Plot Placeholder](feat_importance.png)
 
 The XGBoost feature importance analysis revealed the most influential factors in predicting medication types:
 - **Top Feature 1:** `Anxiety Diagnosis` (Importance: 0.079994)
@@ -221,7 +221,7 @@ This indicates that patient's anxiety status, their OCD obsession severity, ethn
 
 A simple, interactive web application (dashboard) built with Streamlit demonstrates how this model could be utilized for practical predictions.
 
-![Streamlit Dashboard Placeholder](screenshots/streamlit_dashboard.png)
+![Streamlit Dashboard Placeholder](streamlit_dashboard.png)
 
 **Features:**
 - User-friendly interface to input patient's demographic and clinical data via sliders and dropdowns.
